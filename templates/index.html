@@ -2,23 +2,23 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>CRUD Películas</title>
+    <title>Catálogo Retro - CRUD</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
 
     <header>
-        <h1>Gestor de Películas Retro</h1>
+        <h1>Cinema Classics</h1>
     </header>
     
     <main>
         <section id="agregar-pelicula">
-            <h2>Agregar Nueva Película</h2>
+            <h2>Añadir a la Cartelera</h2>
             <form action="/agregar" method="POST">
-                <input type="text" name="titulo" placeholder="Título" required>
+                <input type="text" name="titulo" placeholder="Título de la obra" required>
                 <input type="text" name="director" placeholder="Director" required>
-                <input type="number" name="año" placeholder="Año" required>
-                <button type="submit">Guardar</button>
+                <input type="number" name="año" placeholder="Año de estreno" required>
+                <button type="submit" class="btn-guardar">Guardar</button>
             </form>
         </section>
 
@@ -27,7 +27,10 @@
             <ul>
                 {% for peli in peliculas %}
                     <li>
-                        <span><strong>{{ peli.titulo }}</strong> ({{ peli.año }}) - Dir: {{ peli.director }}</span>
+                        <span class="peli-info">
+                            <strong>{{ peli.titulo }}</strong> ({{ peli.año }}) <br> 
+                            <small>Dir: {{ peli.director }}</small>
+                        </span>
                         <div>
                             <a href="/editar/{{ peli.id }}"><button class="btn-editar">Editar</button></a>
                             <button onclick="confirmarEliminacion('{{ peli.id }}')" class="btn-borrar">Borrar</button>
@@ -39,12 +42,12 @@
     </main>
 
     <footer>
-        <p>Desarrollo Web - Proyecto CRUD Completo</p>
+        <p>&copy; 2026 Desarrollo Web - Sistema CRUD de Películas</p>
     </footer>
 
     <script>
         function confirmarEliminacion(id) {
-            let respuesta = confirm("¿Estás seguro de que quieres eliminar esta película del catálogo?");
+            let respuesta = confirm("¿Estás seguro de que quieres sacar esta película de la cartelera?");
             if (respuesta) {
                 window.location.href = "/eliminar/" + id;
             }

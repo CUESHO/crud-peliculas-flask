@@ -2,30 +2,30 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Editar Película</title>
+    <title>Editar Obra - Cinema Classics</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <header>
-        <h1>Editar Película</h1>
+        <h1>Cinema Classics</h1>
     </header>
     
     <main>
         <section id="editar-pelicula">
-            <h2>Modificar Datos</h2>
+            <h2>Modificar Datos del Registro</h2>
             <form action="/actualizar/{{ peli.id }}" method="POST">
                 <input type="text" name="titulo" value="{{ peli.titulo }}" required>
                 <input type="text" name="director" value="{{ peli.director }}" required>
                 <input type="number" name="año" value="{{ peli.año }}" required>
-                <button type="submit" class="btn-editar">Actualizar Guardado</button>
+                <button type="submit" class="btn-guardar">Actualizar Cartelera</button>
             </form>
-            <br>
-            <a href="/" class="link-volver">Volver al Catálogo sin guardar</a>
+            
+            <a href="/" class="link-volver">← Volver al Catálogo</a>
         </section>
     </main>
 
     <footer>
-        <p>Desarrollo Web - Proyecto CRUD Completo</p>
+        <p>&copy; 2026 Desarrollo Web - Sistema CRUD de Películas</p>
     </footer>
 </body>
 </html>

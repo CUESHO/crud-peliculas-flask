@@ -1,85 +1,143 @@
+/* Importamos fuentes de Google: Playfair para títulos (elegante) y Roboto para textos (limpia) */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;500&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* Fondo oscuro tipo sala de cine */
+    color: #e0e0e0;
     margin: 0;
     padding: 0;
 }
 
 header {
-    background-color: #2c3e50;
-    color: white;
+    background-color: #800000; /* Rojo vino oscuro (cortina de cine) */
+    color: #f1c40f; /* Dorado */
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 2rem 0;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    border-bottom: 3px solid #f1c40f;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }
 
 main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #1e1e1e; /* Gris muy oscuro para el contenedor */
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.7);
+    border: 1px solid #333;
 }
 
-section {
-    margin-bottom: 30px;
-}
-
-form {
-    display: flex;
-    gap: 10px;
+section h2 {
+    font-family: 'Playfair Display', serif;
+    color: #f1c40f;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
     margin-bottom: 20px;
 }
 
-input {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    flex: 1;
+/* Diseño del Formulario */
+form {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap; /* Para que se acomode en celulares */
 }
 
+input {
+    padding: 12px;
+    background-color: #2a2a2a;
+    border: 1px solid #444;
+    color: #fff;
+    border-radius: 5px;
+    flex: 1;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #f1c40f;
+    box-shadow: 0 0 5px rgba(241, 196, 15, 0.5);
+}
+
+/* Diseño de Botones */
 button {
-    background-color: #27ae60;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
     color: white;
     border: none;
-    padding: 8px 15px;
+    padding: 10px 20px;
     cursor: pointer;
-    border-radius: 4px;
+    border-radius: 5px;
+    transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-button:hover { background-color: #2ecc71; }
+button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
+}
 
-.btn-editar { background-color: #f39c12; }
-.btn-editar:hover { background-color: #e67e22; }
+.btn-guardar { background-color: #27ae60; }
+.btn-editar { background-color: #d35400; }
+.btn-borrar { background-color: #c0392b; margin-left: 10px; }
 
-.btn-borrar { background-color: #e74c3c; margin-left: 5px; }
-.btn-borrar:hover { background-color: #c0392b; }
-
+/* Lista de Películas */
 ul {
     list-style-type: none;
     padding: 0;
 }
 
 li {
-    background: #ecf0f1;
-    margin: 5px 0;
-    padding: 10px;
-    border-radius: 4px;
+    background: #252525;
+    margin: 10px 0;
+    padding: 15px 20px;
+    border-radius: 8px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-left: 4px solid #f1c40f; /* Detalle dorado a la izquierda */
+    transition: background 0.3s ease;
 }
 
+li:hover {
+    background: #2c2c2c;
+}
+
+.peli-info strong {
+    font-size: 1.2rem;
+    color: #fff;
+    font-family: 'Playfair Display', serif;
+}
+
+.peli-info {
+    color: #aaa;
+}
+
+/* Enlaces */
 .link-volver {
-    color: #3498db;
+    display: inline-block;
+    margin-top: 20px;
+    color: #f1c40f;
     text-decoration: none;
     font-weight: bold;
+    transition: color 0.3s ease;
 }
-.link-volver:hover { text-decoration: underline; }
+
+.link-volver:hover { color: #fff; }
 
 footer {
     text-align: center;
     padding: 20px;
-    color: #7f8c8d;
+    color: #666;
+    font-size: 0.9rem;
+    margin-top: 40px;
 }
