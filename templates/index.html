@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>CRUD Películas</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Gestor de Películas Retro</h1>
+    </header>
+    
+    <main>
+        <section id="lista-peliculas">
+            <h2>Catálogo Actual</h2>
+            <ul>
+                {% for peli in peliculas %}
+                    <li>
+                        <strong>{{ peli.titulo }}</strong> ({{ peli.año }}) - Dir: {{ peli.director }}
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Desarrollo Web - Proyecto CRUD</p>
+    </footer>
+</body>
+</html>
