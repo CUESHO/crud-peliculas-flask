@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+
     <header>
         <h1>Gestor de Películas Retro</h1>
     </header>
@@ -20,12 +21,17 @@
                 <button type="submit">Guardar</button>
             </form>
         </section>
+
         <section id="lista-peliculas">
             <h2>Catálogo Actual</h2>
             <ul>
                 {% for peli in peliculas %}
                     <li>
-                        <strong>{{ peli.titulo }}</strong> ({{ peli.año }}) - Dir: {{ peli.director }}
+                        <span><strong>{{ peli.titulo }}</strong> ({{ peli.año }}) - Dir: {{ peli.director }}</span>
+                        <div>
+                            <a href="/editar/{{ peli.id }}"><button class="btn-editar">Editar</button></a>
+                            <button onclick="confirmarEliminacion('{{ peli.id }}')" class="btn-borrar">Borrar</button>
+                        </div>
                     </li>
                 {% endfor %}
             </ul>
@@ -33,7 +39,16 @@
     </main>
 
     <footer>
-        <p>Desarrollo Web - Proyecto CRUD</p>
+        <p>Desarrollo Web - Proyecto CRUD Completo</p>
     </footer>
+
+    <script>
+        function confirmarEliminacion(id) {
+            let respuesta = confirm("¿Estás seguro de que quieres eliminar esta película del catálogo?");
+            if (respuesta) {
+                window.location.href = "/eliminar/" + id;
+            }
+        }
+    </script>
 </body>
 </html>

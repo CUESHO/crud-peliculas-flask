@@ -36,6 +36,7 @@ input {
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    flex: 1;
 }
 
 button {
@@ -47,9 +48,13 @@ button {
     border-radius: 4px;
 }
 
-button:hover {
-    background-color: #2ecc71;
-}
+button:hover { background-color: #2ecc71; }
+
+.btn-editar { background-color: #f39c12; }
+.btn-editar:hover { background-color: #e67e22; }
+
+.btn-borrar { background-color: #e74c3c; margin-left: 5px; }
+.btn-borrar:hover { background-color: #c0392b; }
 
 ul {
     list-style-type: none;
@@ -64,4 +69,17 @@ li {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+.link-volver {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+.link-volver:hover { text-decoration: underline; }
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #7f8c8d;
 }
